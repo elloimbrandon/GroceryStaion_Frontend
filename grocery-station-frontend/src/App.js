@@ -1,10 +1,16 @@
+// *** packages ***
+// @material-tailwind/react -- not really using
+// axios
+// react-router-dom
+
 import "./App.css";
+import Home from "./components/home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 
