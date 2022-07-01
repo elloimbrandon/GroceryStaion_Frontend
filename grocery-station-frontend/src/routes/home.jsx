@@ -1,19 +1,32 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 import "../App.css";
 
 const Home = () => {
-    return (
-        <div>
-          <h1>Updates</h1>
-          <ul>
-              <li>
-                  - soup
-              </li>
-              <li>
-                  - specials
-              </li>
-          </ul>
-        </div>
+  const [updates, setUpdates] = useState([]);
+
+  const getUpdates = () => {
+    axios.get("http://localhost:3000/home").then((response) => {
+      setUpdates(response.data);
+    });
+  };
+
+  useEffect(() => {
+    getUpdates();
+  }, []);
+
+  return (
+    <div>
+      {updates.map((update, index) => {
+        return (
+          <div key={index}>
+            <p>{update.title}</p>
+            <p>{update.description}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
@@ -23,7 +36,7 @@ export default Home;
 
 // const [test, setTest] = useState();
 // const [testB, setTestB] = useState(false)
-    
+
 // <button onClick={() => {
 //     if (testB == false) { setTest("Testing..."); setTestB(true) }
 //     else { setTest("its working.."); setTestB(false) }

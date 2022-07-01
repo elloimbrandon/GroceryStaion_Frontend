@@ -1,5 +1,4 @@
 import "../App.css";
-import react from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Nav = (props) => {
@@ -20,8 +19,8 @@ const Nav = (props) => {
   };
 
   return (
-    <div className="w-60 h-full shadow-md bg-white px-1 absolute">
-      <ul className="flex-nav-column">
+    <div className="flex w-48 h-screen shadow-md bg-white ">
+      <ul className="flex flex-col align-items-center justify-content-center w-full">
         <li>
           <NavLink
             onClick={() => {
@@ -40,7 +39,7 @@ const Nav = (props) => {
               props.setTitle("Menu");
               handleTitle("Menu");
             }}
-            to="/menu"
+            to="menu/sandwiches"
           >
             Menu
           </NavLink>
@@ -57,7 +56,11 @@ const Nav = (props) => {
           </NavLink>
         </li>
         <li>
-          {user ? <button onClick={handleSignOut}>User Logout</button> : null}
+          {user ? (
+            <button className="border mt-4" onClick={handleSignOut}>
+              logout
+            </button>
+          ) : null}
         </li>
       </ul>
     </div>

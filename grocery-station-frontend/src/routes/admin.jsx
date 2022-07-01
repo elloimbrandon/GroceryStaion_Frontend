@@ -2,7 +2,7 @@ import "../App.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { Outlet, NavLink } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 
 const Admin = () => {
   const [user, setUser] = useState(
@@ -13,6 +13,39 @@ const Admin = () => {
   const [pwd, setPwd] = useState("");
   const [loggedIn, SetLoggedIn] = useState(false);
   const navigate = useNavigate();
+
+  const LoginModal = () => {
+    return (
+      <>
+        <Modal size="sm" show aria-labelledby="example-modal-sizes-title-sm">
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-sm">
+              Welcome {user}!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            You now have access to edit parts of the web page!
+          </Modal.Body>
+          <div className="flex-modal-user">
+            <button
+              onClick={() => {
+                navigate("/home");
+              }}
+              class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Home
+            </button>
+            <button
+              onClick={handleSignOut}
+              className="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Logout
+            </button>
+          </div>
+        </Modal>
+      </>
+    );
+  };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -30,7 +63,6 @@ const Admin = () => {
         );
         setUser(response.data.user.name);
         SetLoggedIn(true);
-        alert(`${response.data.user.name} successfully signed in!`);
       })
       .catch((error) => {
         if (error.response) {
@@ -46,21 +78,17 @@ const Admin = () => {
     SetLoggedIn(false);
     setUserEmail("");
     setPwd("");
+    alert("You have logged out!");
     navigate("/admin");
-    alert("You have successfully signed out!");
   };
+
+  // check token logic for login and page change
 
   return (
     <>
-      {localStorage.getItem("token") && loggedIn ? (
+      {localStorage.getItem("token") || loggedIn ? (
         <div>
-          Welcome {user}!
-          <br />
-          You have the permissions to change the webpage!
-          <br />
-          <a href="\">Home Page</a>
-          <br />
-          <button onClick={handleSignOut}>Logout</button>
+          <LoginModal user={user} />
         </div>
       ) : (
         <div className="flex-admin-login-container">
