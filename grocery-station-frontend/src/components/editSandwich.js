@@ -1,10 +1,8 @@
 import "../App.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-const Edit = (props) => {
+const EditSandwich = (props) => {
   const [sandwich, setSandwich] = useState({ ...props.sandwichCard });
-  //   console.log(props.sandwichCard);
 
   const handleChange = (event) => {
     setSandwich({ ...sandwich, [event.target.name]: event.target.value });
@@ -56,4 +54,4 @@ const Edit = (props) => {
   );
 };
 
-export default Edit;
+export default EditSandwich;

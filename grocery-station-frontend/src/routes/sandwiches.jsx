@@ -1,6 +1,6 @@
 import "../App.css";
 import { useState, useEffect } from "react";
-import Edit from "../components/editFood";
+import EditSandwich from "../components/editSandwich";
 import axios from "axios";
 import Menu from "./menu";
 // import { Outlet, NavLink } from "react-router-dom";
@@ -76,7 +76,7 @@ const Sandwiches = () => {
                       </>
                     ) : (
                       <div className="border-t border-black pt-1">
-                        <Edit
+                        <EditSandwich
                           sandwichCard={sandwichCard}
                           handleUpdate={handleUpdate}
                         />
