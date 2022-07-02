@@ -39,7 +39,7 @@ const Salads = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 text-center underline">Salads</h1>
+        <h1 className="display-6 text-center underline">Salads</h1>
         <div className="overflow-scroll pb-56 h-screen w-auto flex flex-row flex-wrap">
           {saladCards.map((saladCard, index) => {
             return (

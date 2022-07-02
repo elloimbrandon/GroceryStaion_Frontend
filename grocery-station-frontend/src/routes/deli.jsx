@@ -39,7 +39,7 @@ const Deli = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 text-center underline">Meat & Cheeses</h1>
+        <h1 className="display-6 text-center underline">Meat & Cheeses</h1>
         <div className="overflow-scroll pb-56 h-screen w-auto flex flex-row flex-wrap">
           {deliCards.map((deliCard, index) => {
             return (

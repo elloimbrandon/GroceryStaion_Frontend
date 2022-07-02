@@ -15,7 +15,7 @@ const Nav = (props) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     alert(`you successfully signed out!`);
-    navigate("/home");
+    navigate("/admin");
   };
 
   return (
