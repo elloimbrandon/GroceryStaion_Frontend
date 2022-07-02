@@ -38,7 +38,8 @@ const Breakfast = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 text-center underline">Breakfast</h1>
+        <h1 className="display-6 text-center underline">Breakfast</h1>
+        <h1 className="text-center text-2xl">(Served all day!)</h1>
         <div className="overflow-scroll pb-56 h-screen w-auto flex flex-row flex-wrap">
           {breakfastCards.map((breakfastCard, index) => {
             return (

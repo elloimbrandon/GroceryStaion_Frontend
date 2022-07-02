@@ -5,7 +5,7 @@ import { Outlet, NavLink } from "react-router-dom";
 const Menu = () => {
   return (
     <>
-      <div className="container flex flex-row w-96 justify-content-center space-x-5">
+      <div className="container flex flex-row w-full justify-content-center space-x-5">
         <div className="text-2xl">
           <NavLink to="/menu/sandwiches">Sandwiches</NavLink>
         </div>
@@ -14,6 +14,9 @@ const Menu = () => {
         </div>
         <div className="text-2xl">
           <NavLink to="/menu/breakfast">Breakfast</NavLink>
+        </div>
+        <div className="text-2xl">
+          <NavLink to="/menu/deli">Deli Items</NavLink>
         </div>
         <div>
           <Outlet />

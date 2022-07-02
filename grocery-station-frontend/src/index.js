@@ -7,7 +7,9 @@ import About from "./routes/about";
 import Sandwiches from "./routes/sandwiches";
 import Salads from "./routes/salads";
 import Breakfast from "./routes/breakfast";
+import Deli from "./routes/deli";
 import Admin from "./routes/admin";
+import Location from "./routes/location";
 import "./index.css";
 import App from "./App";
 
@@ -21,7 +23,9 @@ root.render(
         <Route path="menu/sandwiches" element={<Sandwiches />} />
         <Route path="menu/salads" element={<Salads />} />
         <Route path="menu/breakfast" element={<Breakfast />} />
+        <Route path="menu/deli" element={<Deli />} />
         <Route path="about" element={<About />} />
+        <Route path="Location" element={<Location />} />
         <Route path="*" element={<h1>Nothing To Show!</h1>} />
       </Route>
       <Route path="admin" element={<Admin />} />

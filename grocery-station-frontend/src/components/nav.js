@@ -56,6 +56,17 @@ const Nav = (props) => {
           </NavLink>
         </li>
         <li>
+          <NavLink
+            onClick={() => {
+              props.setTitle("Location");
+              handleTitle("Location");
+            }}
+            to="/location"
+          >
+            Location
+          </NavLink>
+        </li>
+        <li>
           {user ? (
             <button className="border mt-4" onClick={handleSignOut}>
               logout

@@ -17,11 +17,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="border container flex justify-content-center">
       {updates.map((update, index) => {
         return (
           <div key={index}>
-            <p>{update.title}</p>
+            <p className="border container flex justify-content-center">
+              {update.title}
+            </p>
+            {/* current soup */}
             <p>{update.description}</p>
           </div>
         );
