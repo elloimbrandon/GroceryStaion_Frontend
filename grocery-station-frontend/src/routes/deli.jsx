@@ -39,43 +39,40 @@ const Deli = () => {
     <>
       <Menu />
       <div>
-        <h1 className="display-6 text-center underline">Meat & Cheeses</h1>
-        <div className="overflow-scroll pb-56 h-screen w-auto flex flex-row flex-wrap">
+        <h1 class="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark">
+          Meat & Cheeses
+        </h1>
+        <div className="container h-full pb-4 w-full flex flex-row flex-wrap">
           {deliCards.map((deliCard, index) => {
             return (
-              <div
-                className="pt-4 flex lg:w-1/2 md:w-1/2 sm:w-full"
-                key={index}
-              >
-                <div className="container mx-auto flex flex-row w-full">
-                  <div className="w-full mx-auto flex flex-col">
-                    <img
-                      className="w-full h-full rounded-l-xl"
-                      src={deliCard.image}
-                      alt="salad"
-                    />
+              <div className="p-2 flex lg:w-1/2 md:w-1/2 sm:w-full" key={index}>
+                <div className="w-1/2 flex flex-col">
+                  <img
+                    className="w-full h-full rounded-l-xl"
+                    src={deliCard.image}
+                    alt="salad"
+                  />
+                </div>
+                <div className="container flex flex-col bg-soft-grey rounded-r-xl w-full border-l border-dark">
+                  <div>
+                    <h1 className="container flex flex-row justify-content-center text-3xl border-bottom border-dark font-extrabold p-1 mb-3">
+                      {deliCard.itemName}
+                    </h1>
                   </div>
-                  <div className="container flex flex-col bg-indigo-50 rounded-r-xl w-full h-auto mx-auto">
-                    <div>
-                      <h1 className="container flex flex-row justify-content-center text-3xl underline p-3">
-                        {deliCard.itemName}
-                      </h1>
+                  {!user ? (
+                    <div className="container mt-1 mb-1">
+                      <p className="pl-2 text-xl border border-dark rounded">
+                        Price per lb: ${deliCard.price.$numberDecimal}
+                      </p>
                     </div>
-                    {!user ? (
-                      <>
-                        <p className="text-2xl border-t border-black pt-5">
-                          Price per lb: ${deliCard.price.$numberDecimal}
-                        </p>
-                      </>
-                    ) : (
-                      <div className="border-t border-black pt-1">
-                        <EditDeli
-                          deliCard={deliCard}
-                          handleUpdate={handleUpdate}
-                        />
-                      </div>
-                    )}
-                  </div>
+                  ) : (
+                    <div className="container border border-dark mb-2 pt-1">
+                      <EditDeli
+                        deliCard={deliCard}
+                        handleUpdate={handleUpdate}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             );

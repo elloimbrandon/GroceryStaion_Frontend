@@ -18,12 +18,12 @@ const Admin = () => {
     return (
       <>
         <Modal size="sm" show aria-labelledby="example-modal-sizes-title-sm">
-          <Modal.Header closeButton>
+          <Modal.Header closeButton className="border-bottom border-dark">
             <Modal.Title id="example-modal-sizes-title-sm">
               Welcome {user}!
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="text-xl">
             You now have access to edit parts of the web page!
           </Modal.Body>
           <div className="flex-modal-user">
@@ -31,13 +31,13 @@ const Admin = () => {
               onClick={() => {
                 navigate("/home");
               }}
-              className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="btn bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow"
             >
               Home
             </button>
             <button
               onClick={handleSignOut}
-              className="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+              className="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow"
             >
               Logout
             </button>
@@ -91,9 +91,11 @@ const Admin = () => {
           <LoginModal user={user} />
         </div>
       ) : (
-        <div className="flex-admin-login-container">
-          <h1>Admin Login</h1>
-          <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col h-4/5 w-2/5">
+        <div className="flex-admin-login-container bg-plat-num">
+          <h1 className="display-6 border-bottom border-dark mb-4 ">
+            Admin Login
+          </h1>
+          <div className="bg-soft-grey border shadow rounded px-8 pt-6 pb-8 mb-4 flex flex-col h-4/5 w-2/5">
             <form onSubmit={handleSignIn}>
               <div className="mb-4">
                 <label
@@ -132,15 +134,23 @@ const Admin = () => {
                   required
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between border-bottom border-dark pb-4">
                 <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
                   Sign In
                 </button>
-                <p className="inline-block align-baseline font-bold text-sm text-blue">
+                <p className="inline-block text-l align-baseline font-extrabold text-blue">
                   Forgot Password? <br />- Contact Brandon -
                 </p>
               </div>
             </form>
+            <button
+              className="mt-9 text-lg bg-green-600 hover:bg-sky-700 text-white font-bold rounded btn container w-1/2"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </button>
           </div>
         </div>
       )}

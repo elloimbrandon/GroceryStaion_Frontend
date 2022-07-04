@@ -6,7 +6,7 @@
 
 import "./App.css";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Outlet } from "react-router-dom";
 import Home from "./components/home";
 import { useEffect } from "react";
 

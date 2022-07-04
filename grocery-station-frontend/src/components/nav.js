@@ -19,9 +19,9 @@ const Nav = (props) => {
   };
 
   return (
-    <div className="flex w-48 h-screen shadow-md bg-white ">
-      <ul className="flex flex-col align-items-center justify-content-center w-full">
-        <li>
+    <div className="flex h-screen">
+      <ul className="container bg-rich-green flex text-2xl flex-col align-items-center justify-content-center w-full">
+        <li className="text-plat-num m-4">
           <NavLink
             onClick={() => {
               props.setTitle("Grocery Station");
@@ -32,19 +32,19 @@ const Nav = (props) => {
             Home
           </NavLink>
         </li>
-        <li>
+        <li className="text-plat-num m-4">
           <NavLink
             value="Menu"
             onClick={() => {
               props.setTitle("Menu");
               handleTitle("Menu");
             }}
-            to="menu/sandwiches"
+            to="/sandwiches"
           >
             Menu
           </NavLink>
         </li>
-        <li>
+        <li className="text-plat-num m-4">
           <NavLink
             onClick={() => {
               props.setTitle("About");
@@ -55,7 +55,7 @@ const Nav = (props) => {
             About
           </NavLink>
         </li>
-        <li>
+        <li className="text-plat-num m-4">
           <NavLink
             onClick={() => {
               props.setTitle("Location");
@@ -68,7 +68,10 @@ const Nav = (props) => {
         </li>
         <li>
           {user ? (
-            <button className="border mt-4" onClick={handleSignOut}>
+            <button
+              className="text-plat-num shadow p-1 bg-red-500 rounded mt-4"
+              onClick={handleSignOut}
+            >
               logout
             </button>
           ) : null}

@@ -3,6 +3,8 @@ import HomeCarousel from "../components/homeCarousel";
 import axios from "axios";
 import EditHome from "../components/editHome";
 
+import Nav from "../components/nav";
+
 import "../App.css";
 
 const Home = () => {
@@ -42,54 +44,60 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="border w-68 overflow-scroll container flex flex-col justify-content-center">
-      <h3 className="border w-auto container flex justify-content-center">
-        10810 E. Via Linda, Scottsdale, AZ, 85259
-      </h3>
-      <h3 className="border w-auto container flex justify-content-center">
-        Serving the valley delicious sandwiches since 2005!
-      </h3>
-      <div className="border w-auto container flex justify-content-center">
-        <img
-          className="container w-1/2"
-          src="https://upload.wikimedia.org/wikipedia/en/3/3a/Boar%27s_Head_logo.png"
-          alt="Boar's Head"
-        />
-      </div>
-      {updates.map((update, index) => {
-        return (
-          <>
-            {!user ? (
-              <div key={index}>
-                <h1 className="text-2xl underline w-auto container flex justify-content-center">
-                  {update.title}
-                </h1>
-                <div className="mt-1 border bg-indigo-50 rounded w-1/2 container flex flex-col justify-content-center">
-                  {/* current soup */}
-                  <p className="container w-auto border flex justify-content-center">
-                    Updated On: {handleDate(update.lastActiveAt)}
-                  </p>
-                  <p className="container w-auto border flex justify-content-center">
-                    {update.description}
-                  </p>
-                </div>
-              </div>
-            ) : (
+    <>
+      {/* { <Home />} */}
+      <div className="w-68 container flex flex-col justify-content-center">
+        <h3 className="w-auto mt-2 text-3xl container flex justify-content-center home-quote border-dark ">
+          Serving the valley delicious sandwiches since 2005!
+        </h3>
+        <div className="container flex flex-row pb-3">
+          {updates.map((update, index) => {
+            return (
               <>
-                <EditHome updatesCard={update} handleUpdate={handleUpdate} />
+                {!user ? (
+                  <div
+                    className="w-full container flex flex-col justify-content-center"
+                    key={index}
+                  >
+                    <h1 className="mt-2 display-6 w-auto container flex justify-content-center border-bottom border-dark">
+                      {update.title}
+                    </h1>
+                    <div className="mt-2  rounded w-full container flex flex-col justify-content-center">
+                      {/* current soup */}
+                      <p className="text-2xl container w-1/2 border border-dark rounded mb-2 flex justify-content-center">
+                        {update.description}
+                      </p>
+                      <p className="text-l w-auto flex justify-content-center">
+                        * Updated On: {handleDate(update.lastActiveAt)} *
+                      </p>
+                      <img
+                        className="container w-1/2 mt-3"
+                        src="https://upload.wikimedia.org/wikipedia/en/3/3a/Boar%27s_Head_logo.png"
+                        alt="Boar's Head"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <EditHome
+                      updatesCard={update}
+                      handleUpdate={handleUpdate}
+                    />
+                  </>
+                )}
               </>
-            )}
-          </>
-        );
-      })}
-      <HomeCarousel />
-      <h3 className="border w-auto container flex justify-content-center">
-        Open Mon-Fri 7am - 9pm | Sunday 8am - 8pm
-      </h3>
-      <h3 className="border w-auto container flex justify-content-center">
-        Tell: 480-860-6838
-      </h3>
-    </div>
+            );
+          })}
+          <HomeCarousel />
+        </div>
+        <h3 className="border-bottom border-dark mt-4 text-2xl w-auto container flex justify-content-center">
+          Open Mon-Fri | 7am - 9pm | Sunday 8am - 8pm
+        </h3>
+        <h3 className="w-auto text-2xl container flex justify-content-center">
+          Tell: 480-860-6838
+        </h3>
+      </div>
+    </>
   );
 };
 

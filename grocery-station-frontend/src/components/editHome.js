@@ -15,7 +15,7 @@ const EditHome = (props) => {
   };
 
   return (
-    <div className="container flex flex-column border w-auto">
+    <div className="container text-xl mt-2 flex flex-column border border-dark rounded w-full">
       <form className="p-1" onSubmit={handleSubmit}>
         <label htmlFor="title">
           Title: {""}
@@ -44,7 +44,7 @@ const EditHome = (props) => {
         </label>
         <br />
         <input
-          className="btn border mt-2"
+          className="btn border border-dark mt-2"
           type="submit"
           value="Submit Changes"
         />

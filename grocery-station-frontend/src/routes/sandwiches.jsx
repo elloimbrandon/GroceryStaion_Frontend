@@ -40,38 +40,44 @@ const Sandwiches = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 text-center underline">Sandwiches</h1>
-        {/* keep an eye on padding */}
-        <div className="container overflow-scroll pb-48 h-screen w-full flex flex-row flex-wrap">
+        <h1 class="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark ">
+          Sandwiches
+        </h1>
+        <p className="text-center text-xl p-1">
+          (Make a sandwich order into a meal with chips, drink and a side of
+          macaroni salad, potato salad, or coleslaw for 2.49!)
+        </p>
+        <div className="container h-full w-full flex flex-row flex-wrap">
           {sandwichCards.map((sandwichCard, index) => {
             return (
               <div className="flex p-2 lg:w-1/2 md:w-1/2 sm:w-full" key={index}>
-                {/* <div className="border container flex flex-row w-full"> */}
-                <div className="w-1/2 h-1/2 flex flex-col">
+                <div className="w-1/2 flex flex-col">
                   <img
-                    className="w-full rounded-l-xl"
+                    className="w-full h-full rounded-l-xl"
                     src={sandwichCard.image}
                     alt="sandwich"
                   />
                 </div>
-                <div className="container flex flex-col bg-indigo-50 rounded-r-xl w-full ">
+                <div className="container flex flex-col bg-soft-grey rounded-r-xl w-full ">
                   <div>
-                    <h1 className="container flex flex-row justify-content-center text-3xl underline p-3">
+                    <h1 className="container flex flex-row justify-content-center text-3xl border-bottom border-dark font-extrabold p-1 m-1">
                       {sandwichCard.itemName}
                     </h1>
                   </div>
-                  <p className="text">{sandwichCard.description}</p>
+                  <p className="container text-xl">
+                    {sandwichCard.description}
+                  </p>
                   {!user ? (
-                    <>
-                      <p className="text-l border-t border-black pt-2">
+                    <div className="mt-2 mb-2 container rounded border border-dark">
+                      <p className="text-xl">
                         Full Sandwich: ${sandwichCard.priceFull.$numberDecimal}
                       </p>
-                      <p className="text-l">
+                      <p className="text-xl">
                         Half Sandwich: ${sandwichCard.priceHalf.$numberDecimal}
                       </p>
-                    </>
+                    </div>
                   ) : (
-                    <div className="container flex flex-col border border-t border-black">
+                    <div className="container flex flex-col border border-t border-dark mb-2">
                       <EditSandwich
                         sandwichCard={sandwichCard}
                         handleUpdate={handleUpdate}
@@ -79,7 +85,6 @@ const Sandwiches = () => {
                     </div>
                   )}
                 </div>
-                {/* </div> */}
               </div>
             );
           })}
