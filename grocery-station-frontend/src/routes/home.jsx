@@ -3,8 +3,6 @@ import HomeCarousel from "../components/homeCarousel";
 import axios from "axios";
 import EditHome from "../components/editHome";
 
-import Nav from "../components/nav";
-
 import "../App.css";
 
 const Home = () => {
@@ -47,7 +45,6 @@ const Home = () => {
 
   return (
     <>
-      {/* { <Home />} */}
       <div className="w-68 container flex flex-col justify-content-center">
         <h3 className="w-auto mt-2 text-3xl container flex justify-content-center home-quote border-dark ">
           Serving the valley delicious sandwiches since 2005!
@@ -58,14 +55,13 @@ const Home = () => {
               <>
                 {!user ? (
                   <div
-                    className="w-full container flex flex-col justify-content-center"
+                    className="w-full border-r border-dark container flex flex-col justify-content-center"
                     key={index}
                   >
                     <h1 className="mt-2 display-6 w-auto container flex justify-content-center border-bottom border-dark">
                       {update.title}
                     </h1>
                     <div className="mt-2  rounded w-full container flex flex-col justify-content-center">
-                      {/* current soup */}
                       <p className="text-2xl container w-1/2 border border-dark rounded mb-2 flex justify-content-center">
                         {update.description}
                       </p>
@@ -104,15 +100,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// graveyard testing
-
-// const [test, setTest] = useState();
-// const [testB, setTestB] = useState(false)
-
-// <button onClick={() => {
-//     if (testB == false) { setTest("Testing..."); setTestB(true) }
-//     else { setTest("its working.."); setTestB(false) }
-//     }
-// }> Click Me! </button>
-//     <p>{test}</p>
