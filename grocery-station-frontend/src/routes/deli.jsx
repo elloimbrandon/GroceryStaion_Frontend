@@ -44,7 +44,7 @@ const Deli = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark">
+        <h1 className="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark">
           Meat & Cheeses
         </h1>
         <div className="container h-full pb-4 w-full flex flex-row flex-wrap">

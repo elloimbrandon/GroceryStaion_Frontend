@@ -45,7 +45,7 @@ const Sandwiches = () => {
     <>
       <Menu />
       <div>
-        <h1 class="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark ">
+        <h1 className="display-6 w-1/2 container border-b flex justify-content-center text-center border-dark ">
           Sandwiches
         </h1>
         <p className="text-center text-xl p-1">
