@@ -11,17 +11,22 @@ const Sandwiches = () => {
   const [sandwichCards, setSandwichCards] = useState([]);
 
   const getSandwiches = () => {
-    axios.get("http://localhost:3000/sandwiches").then((response) => {
-      setSandwichCards(response.data);
-    });
+    axios
+      .get("https://grocery-station-backend.herokuapp.com/sandwiches")
+      .then((response) => {
+        setSandwichCards(response.data);
+      });
   };
 
   const handleUpdate = (item) => {
     axios
-      .put(`http://localhost:3000/sandwiches/${item._id}`, {
-        priceFull: item.priceFull,
-        priceHalf: item.priceHalf,
-      })
+      .put(
+        `https://grocery-station-backend.herokuapp.com/sandwiches/${item._id}`,
+        {
+          priceFull: item.priceFull,
+          priceHalf: item.priceHalf,
+        }
+      )
       .then((response) => {
         console.log(response.data.priceFull);
         getSandwiches();

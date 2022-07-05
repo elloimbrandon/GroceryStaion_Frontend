@@ -10,17 +10,22 @@ const Deli = () => {
   const [deliCards, setDeliCards] = useState([]);
 
   const getDeliItems = () => {
-    axios.get("http://localhost:3000/coldcutscheese").then((response) => {
-      console.log(response.data);
-      setDeliCards(response.data);
-    });
+    axios
+      .get("https://grocery-station-backend.herokuapp.com/coldcutscheese")
+      .then((response) => {
+        console.log(response.data);
+        setDeliCards(response.data);
+      });
   };
 
   const handleUpdate = (item) => {
     axios
-      .put(`http://localhost:3000/coldcutscheese/${item._id}`, {
-        price: item.price,
-      })
+      .put(
+        `https://grocery-station-backend.herokuapp.com/coldcutscheese/${item._id}`,
+        {
+          price: item.price,
+        }
+      )
       .then((response) => {
         console.log(response.data.price);
         getDeliItems();

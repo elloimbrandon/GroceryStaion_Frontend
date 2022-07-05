@@ -13,14 +13,16 @@ const Home = () => {
   const [updates, setUpdates] = useState([]);
 
   const getUpdates = () => {
-    axios.get("http://localhost:3000/home").then((response) => {
-      setUpdates(response.data);
-    });
+    axios
+      .get("https://grocery-station-backend.herokuapp.com/home")
+      .then((response) => {
+        setUpdates(response.data);
+      });
   };
 
   const handleUpdate = (item) => {
     axios
-      .put(`http://localhost:3000/home/${item._id}`, {
+      .put(`https://grocery-station-backend.herokuapp.com/home/${item._id}`, {
         lastActiveAt: new Date(),
         title: item.title,
         description: item.description,

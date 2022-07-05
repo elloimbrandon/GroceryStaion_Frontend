@@ -11,16 +11,21 @@ const Breakfast = () => {
   const [breakfastCards, setBreakfastCards] = useState([]);
 
   const getBreakfast = () => {
-    axios.get("http://localhost:3000/breakfast").then((response) => {
-      setBreakfastCards(response.data);
-    });
+    axios
+      .get("https://grocery-station-backend.herokuapp.com/breakfast")
+      .then((response) => {
+        setBreakfastCards(response.data);
+      });
   };
 
   const handleUpdate = (item) => {
     axios
-      .put(`http://localhost:3000/breakfast/${item._id}`, {
-        price: item.price,
-      })
+      .put(
+        `https://grocery-station-backend.herokuapp.com/breakfast/${item._id}`,
+        {
+          price: item.price,
+        }
+      )
       .then((response) => {
         getBreakfast();
         alert("Updates applied!");

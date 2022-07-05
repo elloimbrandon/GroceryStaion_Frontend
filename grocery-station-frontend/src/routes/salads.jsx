@@ -10,15 +10,17 @@ const Salads = () => {
   const [saladCards, setSaladCards] = useState([]);
 
   const getSalads = () => {
-    axios.get("http://localhost:3000/salads").then((response) => {
-      console.log(response.data);
-      setSaladCards(response.data);
-    });
+    axios
+      .get("https://grocery-station-backend.herokuapp.com/salads")
+      .then((response) => {
+        console.log(response.data);
+        setSaladCards(response.data);
+      });
   };
 
   const handleUpdate = (item) => {
     axios
-      .put(`http://localhost:3000/salads/${item._id}`, {
+      .put(`https://grocery-station-backend.herokuapp.com/salads/${item._id}`, {
         price: item.price,
       })
       .then((response) => {
