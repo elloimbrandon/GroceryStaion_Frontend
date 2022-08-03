@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Grocery Station
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Grocery-Station](./src/images/homepage.png)
 
-## Available Scripts
+## About This Project :
 
-In the project directory, you can run:
+Grocery Station is a local deli and small grocery store located in Scottsdale, AZ! Decided to build out a modular website to promote their brand and give the owners access to update aspects of the website protected by a login system.
 
-### `npm start`
+Live Project: https://grocery-station-frontend.herokuapp.com/home
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Designed to be simple yet smooth with a multi-page layout using react router.
+- Incorporated a Carousel with a bootstrap react component on the home page to view pictures related to Grocery Station
+- Functionality to add or change weekly or daily specials that automatically provide the day it was changed or updated.
+- Ability to login via /admin route to provide access to some edit and add functionality.
+- Created a page to view where Grocery Station is located on a map provided by Google. 📍
 
-### `npm test`
+## Built With :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ![node.js]
+- ![react.js]
+- ![reactRouter]
+- ![express.js]
+- ![mongodb]
+- ![heroku]
+- ![HTML5]
+- ![CSS3]
+- ![tailwind]
+- ![bootstrap]
 
-### `npm run build`
+<!-- USAGE EXAMPLES -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Views
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Edit-Page](./src/images/edit-page.png)
+![Menu](./src/images/menu.png)
+![Login](./src/images/login.png)
+![Login-success](./src/images/login-success.png)
+![Google-Map](./src/images/google-map.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[reactrouter]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white4
+[tailwind]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
+[heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
