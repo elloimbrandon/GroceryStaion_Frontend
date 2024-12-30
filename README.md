@@ -6,8 +6,6 @@
 
 Grocery Station is a local deli and small grocery store located in Scottsdale, AZ! Decided to build out a modular website to promote their brand and give the owners access to update aspects of the website protected by a login system.
 
-Live Project: https://grocery-station-frontend.herokuapp.com/home
-
 ## Features :
 
 - Designed to be simple yet smooth with a multi-page layout using react router.
